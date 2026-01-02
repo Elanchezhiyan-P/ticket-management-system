@@ -1,10 +1,9 @@
 <Solution>
   <Folder Name="/Solution Items/">
-    <File Path="architecture.md" />
+    <File Path="ArchitectureDiagram.md" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="TicketMS.Application/TicketMS.Application.csproj" />
-    <Project Path="TicketMS.Domain/TicketMS.Domain.csproj" />
     <Project Path="TicketMS.Infrastructure/TicketMS.Infrastructure.csproj" />
     <Project Path="TicketMS.WebAPI/TicketMS.WebAPI.csproj" />
   </Folder>

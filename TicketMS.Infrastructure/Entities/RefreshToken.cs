@@ -1,0 +1,34 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TicketMS.Infrastructure.Entities
+{
+    public class RefreshToken
+    {
+        [Key]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Required]
+        public string Token { get; set; } = string.Empty;
+
+        [Required]
+        public string UserId { get; set; } = string.Empty;
+
+        [ForeignKey(nameof(UserId))]
+        public virtual ApplicationUser User { get; set; } = null!;
+
+        public DateTime ExpiresAt { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public DateTime? RevokedAt { get; set; }
+
+        public bool IsRevoked { get; set; } = false;
+
+        [NotMapped]
+        public bool IsExpired => DateTime.UtcNow >= ExpiresAt;
+
+        [NotMapped]
+        public bool IsActive => !IsRevoked && !IsExpired;
+    }
+}
