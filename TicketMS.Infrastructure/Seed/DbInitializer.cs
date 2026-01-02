@@ -61,7 +61,7 @@ namespace TicketMS.Infrastructure.Seed
                     Email = adminEmail,
                     FirstName = "Elan",
                     LastName = "P",
-                    DateOfBirth = new DateOnly(1999, 8, 15),
+                    DateOfBirth = new DateTime(1999, 8, 15),
                     PhoneNumber = "9876543210", 
                     EmailConfirmed = true,
                     IsActive = true

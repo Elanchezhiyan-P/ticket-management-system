@@ -27,9 +27,8 @@ namespace TicketMS.Application.DTOs
         {
             get
             {
-               var today = DateTime.Today;
+                var today = DateOnly.FromDateTime(DateTime.UtcNow);
                 var age = today.Year - DateOfBirth.Year;
-                if (DateOfBirth.Date > today.AddYears(-age)) age--;
                 return age;
             }
         }

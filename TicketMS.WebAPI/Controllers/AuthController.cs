@@ -140,5 +140,13 @@ namespace TicketMS.WebAPI.Controllers
 
             return Ok(result);
         }
+
+
+        [HttpGet("get-error")]
+        [Authorize]
+        public IActionResult GetError()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

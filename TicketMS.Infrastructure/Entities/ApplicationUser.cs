@@ -18,7 +18,7 @@ namespace TicketMS.Infrastructure.Entities
         public string FullName => $"{FirstName} {LastName}";
 
         [Required]
-        public DateOnly DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [NotMapped]
         public int Age
@@ -26,8 +26,7 @@ namespace TicketMS.Infrastructure.Entities
             get
             {
                 var today = DateOnly.FromDateTime(DateTime.UtcNow);
-                var age = today.Year - DateOfBirth.Year;
-                if (DateOfBirth > today.AddYears(-age)) age--;
+                var age = today.Year - DateOfBirth.Year;                
                 return age;
             }
         }
